@@ -94,6 +94,13 @@ bun dev
 
 - [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
 
+---
+## Dark Mode
+
+<img width="1109" alt="DarkModeLandingPage" src="https://github.com/somilg050/ship-that-bot/assets/31178867/abd4a231-fc4b-4512-8893-7dce5897ca32">
+
+---
+
 ## Author
 
 Created by [@somilg050](https://twitter.com/somilg050) in 2024, released under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
