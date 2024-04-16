@@ -1,6 +1,6 @@
 # ShipThatBot
 
-**Welcome to ShipThatBot, the premier solution for launching AI chatbots swiftly and efficiently.** 
+**Welcome to ShipThatBot, the open-source solution for launching AI chatbots swiftly and efficiently.**
 
 **Next.js boilerplate code to build an AI chatbot in hours, not days.**
 
@@ -8,25 +8,51 @@
 
 
 ---
+<p align="center">
+  Start at full speed with AI Chatbot SaaS Starter!
+</p>
 
-Our solution is crafted with a state-of-the-art user interface designed to handle references in chat interactions seamlessly. We are committed to security and user experience, integrating robust authentication via Firebase and ensuring that your data remains secure and private. ShipThatBot is also powered by OpenAI's cutting-edge streaming technology, allowing real-time, dynamic interactions that enhance user engagement. Start with our Next.js template to deploy your AI chatbot in hours, not days, and revolutionize your digital communication.
+<p align="center">
+  <a href="https://twitter.com/somilg050">
+    <img src="https://img.shields.io/twitter/follow/somilg050?style=flat&label=somilg050&logo=twitter&color=0bf&logoColor=fff" alt="somilg050 Twitter follower count" />
+  </a>
+</p>
 
+<p align="center">
+  <a href="#installation"><strong>Installation</strong></a> ·
+  <a href="#tech-stack--features"><strong>Tech Stack + Features</strong></a> ·
+  <a href="#author"><strong>Author</strong></a>
+</p>
+<br/>
 
 ---
 
-Prerequisites Keys:
-* Firebase Integration
-* OpenAI Integration
+## Installation
 
-Copy the `env.sample` file content and create a new `.env.local` file to store all your keys.
-
----
-
-## Getting Started
-
-First, run the development server:
+Clone this repo locally with the following command:
 
 ```bash
+npx create-next-app my-chat-bot-project --example "https://github.com/somilg050/ship-that-bot"
+```
+
+* Install dependencies:
+
+```sh
+npm install
+# or
+yarn install
+# or
+pnpm install
+# or
+bun install
+```
+
+*  Copy `env.sample` to `.env.local` and update the variables.
+
+
+*  Start the development server:
+
+```sh
 npm run dev
 # or
 yarn dev
@@ -35,10 +61,39 @@ pnpm dev
 # or
 bun dev
 ```
-
 ---
 
-* Fully 100% Customizable code for you to build your next AI chatbot SAAS.
-* Loaded with beautiful components from chakra-ui.
-
 <img width="1148" alt="DemoModal" src="https://github.com/somilg050/ship-that-bot/assets/31178867/494083d2-16ac-4f8e-b7c6-5202abfc1668">
+
+## Tech Stack + Features
+
+### Frameworks
+
+- [Next.js](https://nextjs.org/) – React framework for building performant apps with the best developer experience
+
+### Platforms
+
+- [Vercel](https://vercel.com/) – Easily preview & deploy changes with git
+- [Firebase](https://firebase.google.com/) – Realtime database, authentication, and storage for your app
+
+### UI
+
+- [Chakra UI](https://chakra-ui.com/) – Simple, modular and accessible component library for React
+- [Radix UI](https://radix-ui.com/) – A collection of low-level UI components for building high-quality design systems and web apps
+- [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework for rapid UI development
+- [Lucide](https://lucide.dev/) – Beautifully simple, pixel-perfect icons
+- [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) – Optimize custom fonts and remove external network requests for improved performance
+
+### Code Quality
+
+- [TypeScript](https://www.typescriptlang.org/) – Static type checker for end-to-end typesafety
+- [Prettier](https://prettier.io/) – Opinionated code formatter for consistent code style
+- [ESLint](https://eslint.org/) – Pluggable linter for Next.js and TypeScript
+
+### Miscellaneous
+
+- [Vercel Analytics](https://vercel.com/analytics) – Track unique visitors, pageviews, and more in a privacy-friendly way
+
+## Author
+
+Created by [@somilg050](https://twitter.com/somilg050) in 2024, released under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
