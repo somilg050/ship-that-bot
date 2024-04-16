@@ -54,7 +54,7 @@ export default function Home() {
   return (
     <section className="space-y-6 my-20 py-12 sm:py-20 lg:py-20">
       <div className="container flex max-w-5xl flex-col gap-5">
-        <h1 className="text-3xl font-bold">ShipThatBot</h1>
+        <h1 className="text-3xl font-bold">&lt; Insert Your Next Big Idea Here &gt;</h1>
         <h2 className="text-gray-500 text-xl">You can ask me things like...</h2>
         <div className="w-full grid grid-cols-1 gap-2">
           {loading ? (

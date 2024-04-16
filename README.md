@@ -103,4 +103,4 @@ bun dev
 
 ## Author
 
-Created by [@somilg050](https://twitter.com/somilg050) in 2024, released under the [MIT license](https://github.com/shadcn/taxonomy/blob/main/LICENSE.md).
+Created by [@somilg050](https://twitter.com/somilg050) in 2024, released under the [MIT license](https://github.com/somilg050/ship-that-bot/blob/main/LICENSE).

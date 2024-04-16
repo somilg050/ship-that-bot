@@ -4,12 +4,12 @@ const questions = [
   {
     id: 1,
     question:
-      "Store and retrieve dynamic questions for your chatbot to suggest, can be managed through a database or retrieved via an API endpoint.",
+      "This is a place where you can show dynamic questions for your bot to suggest, can be managed through a database or retrieved via an API.",
   },
   {
     id: 2,
     question:
-      "Utilize this API route to seamlessly integrate data fetching into your application, ensuring smooth user experiences.",
+      "Utilize API route to seamlessly integrate data fetching into your application, ensuring smooth user experiences.",
   },
   {
     id: 3,
