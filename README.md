@@ -25,6 +25,7 @@
 </p>
 <br/>
 
+
 ---
 
 ## Installation
@@ -98,6 +99,11 @@ bun dev
 ## Dark Mode
 
 <img width="1109" alt="DarkModeLandingPage" src="https://github.com/somilg050/ship-that-bot/assets/31178867/abd4a231-fc4b-4512-8893-7dce5897ca32">
+
+---
+
+## Demo Video
+https://github.com/somilg050/ship-that-bot/assets/31178867/db7ab286-6088-4ef4-aa2e-baaa33755072
 
 ---
 
