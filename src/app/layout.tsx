@@ -1,12 +1,13 @@
 import "@/src/app/ui/globals.css";
+
 import { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { siteConfig } from "@/src/config/site";
-import { Toaster } from "@/src/components/ui/Toaster";
 import { Providers } from "@/src/app/providers";
 import { fontHeading, fontSans, fontUrban } from "@/src/assets/fonts";
+import { Toaster } from "@/src/components/ui/Toaster";
+import { siteConfig } from "@/src/config/site";
 import { cn } from "@/src/lib/utils";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: "ShipThatBot",
@@ -37,7 +38,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "bg-background min-h-screen font-sans antialiased",
           fontSans.variable,
           fontUrban.variable,
           fontHeading.variable,
@@ -50,6 +51,6 @@ export default function RootLayout({
           <Toaster />
         </Providers>
       </body>
-      </html>
+    </html>
   );
 }

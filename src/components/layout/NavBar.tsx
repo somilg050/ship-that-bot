@@ -1,25 +1,24 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { UserAuth } from "../../context/AuthContext";
-import AssistantLogo from "@/src/app/ui/assistant-logo";
-import Spinner from "@/src/components/Spinner";
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../lib/firebase/firebase";
-// @ts-ignore
-import { v4 as uuidv4 } from "uuid";
-import { Link } from "@chakra-ui/next-js";
+import React, { useEffect, useState } from "react";
 import NextLink from "next/link";
+import AssistantLogo from "@/src/app/ui/assistant-logo";
+import HamburgerMenu from "@/src/components/HamburgerMenu";
 import {
   FullAccessModal,
   SignUpModal,
   StartNowModal,
 } from "@/src/components/Modal";
-import HamburgerMenu from "@/src/components/HamburgerMenu";
-import { Button } from "@chakra-ui/button";
+import Spinner from "@/src/components/Spinner";
 import ThemeToggleButton from "@/src/components/ThemeToggleButton";
-import { useColorMode } from "@chakra-ui/react";
 import { getDocFirestore } from "@/src/lib/firebase/firebaseRepository";
+import { Button, Link, useColorMode } from "@chakra-ui/react";
+import { onAuthStateChanged } from "firebase/auth";
+// @ts-ignore
+import { v4 as uuidv4 } from "uuid";
+
+import { UserAuth } from "../../context/AuthContext";
+import { auth } from "../../lib/firebase/firebase";
 
 const Navbar = ({
   children,
@@ -79,12 +78,12 @@ const Navbar = ({
   }, [user]);
 
   return (
-    <div className={"fixed top-0 w-full z-50"}>
+    <div className={"fixed top-0 z-50 w-full"}>
       <nav
         className={
           colorMode === "light"
-            ? "flex justify-between items-center py-2.5 px-4 bg-white"
-            : "flex justify-between items-center py-2.5 px-4 bg-gray-black"
+            ? "flex items-center justify-between bg-white px-4 py-2.5"
+            : "flex items-center justify-between bg-gray-black px-4 py-2.5"
         }
       >
         <AssistantLogo />
@@ -105,7 +104,7 @@ const Navbar = ({
             as={NextLink}
             href={"/about"}
             _hover={{ textDecoration: "none" }}
-            className="font-medium text-black hover:text-teal-600 px-4"
+            className="px-4 font-medium text-black hover:text-teal-600"
           >
             About
           </Link>
@@ -113,7 +112,7 @@ const Navbar = ({
             <Link
               href={chatUrl}
               _hover={{ textDecoration: "none" }}
-              className="font-medium text-back hover:text-teal-600 mx-2 pl-2 pr-4"
+              className="text-back mx-2 pl-2 pr-4 font-medium hover:text-teal-600"
             >
               New chat
             </Link>
@@ -140,7 +139,7 @@ const Navbar = ({
           ) : (
             <div className="flex items-center">
               <a
-                className="font-medium text-teal-600 hover:text-teal-600 px-4 cursor-pointer"
+                className="cursor-pointer px-4 font-medium text-teal-600 hover:text-teal-600"
                 onClick={handleSignIn}
               >
                 Sign in
@@ -151,8 +150,10 @@ const Navbar = ({
                 onClick={handleSignIn}
               />
               <Button
-                className="font-medium bg-teal-500 hover:bg-teal-600 text-white py-2 px-4 rounded"
+                colorScheme="teal"
+                variant="outline"
                 onClick={() => setShowModal(true)}
+                className="ml-4"
               >
                 Start now
               </Button>

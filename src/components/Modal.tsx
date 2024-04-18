@@ -1,15 +1,15 @@
 import React from "react";
-import { Button } from "@chakra-ui/button";
 import {
+  Button,
+  Modal,
   ModalBody,
   ModalCloseButton,
   ModalContent,
   ModalFooter,
   ModalHeader,
   ModalOverlay,
-} from "@chakra-ui/modal";
-import { Modal } from "@chakra-ui/modal";
-import { Text } from "@chakra-ui/layout";
+  Text,
+} from "@chakra-ui/react";
 
 type ModalProps = {
   isOpen: boolean;
@@ -34,7 +34,8 @@ const SignUpModal: React.FC<ModalProps> = ({ isOpen, onClose, onClick }) => {
           <ModalCloseButton />
           <ModalBody>
             <Text mb="1rem">
-              Launch your AI chat bot in hours not days using ShipThatBot.
+              🚀 Launch your AI chatbot in hours, not days, using ShipThatBot
+              Next.js boilerplate.
             </Text>
           </ModalBody>
 

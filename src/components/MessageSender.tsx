@@ -1,14 +1,14 @@
 "use client";
 
-// @ts-ignore
-import { v4 as uuidv4 } from "uuid";
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { ArrowUpIcon } from "@chakra-ui/icons";
-import { Button } from "@chakra-ui/button";
 import { FullAccessModal, SignUpModal } from "@/src/components/Modal";
 import { UserAuth } from "@/src/context/AuthContext";
-import { useColorMode } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/button";
+import { ArrowRightIcon } from "@chakra-ui/icons";
+import { Input, useColorMode } from "@chakra-ui/react";
+// @ts-ignore
+import { v4 as uuidv4 } from "uuid";
 
 export const MessageSender = () => {
   const { colorMode } = useColorMode();
@@ -64,7 +64,7 @@ export const MessageSender = () => {
         onClick={handleSignIn}
       ></SignUpModal>
       <div className="relative flex">
-        <input
+        <Input
           name="input message"
           type="text"
           placeholder="How can I help you?"
@@ -76,14 +76,11 @@ export const MessageSender = () => {
               return sendMessage();
             }
           }}
-          className={
-            colorMode === "light"
-              ? "w-full py-2 px-4 mr-2 rounded-md border shadow border-teal-700"
-              : "w-full py-2 px-4 mr-2 rounded-md border border-teal-700 shadow text-gray-400 bg-gray-700"
-          }
+          _hover={{ borderColor: "teal.700" }}
+          className="mr-2 px-4 py-2 shadow"
         />
         <Button
-          rightIcon={<ArrowUpIcon />}
+          rightIcon={<ArrowRightIcon />}
           colorScheme="teal"
           variant="outline"
           type="submit"

@@ -1,10 +1,11 @@
 "use client";
-import { MessageSender } from "@/src/components/MessageSender";
-import React, { useState, useEffect } from "react";
+
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { MessageSender } from "@/src/components/MessageSender";
+import { chakra, useColorMode } from "@chakra-ui/react";
 // @ts-ignore
 import { v4 as uuidv4 } from "uuid";
-import { useColorMode } from "@chakra-ui/react";
 
 type Question = {
   question: string;
@@ -16,9 +17,9 @@ const SkeletonLoader = () => (
     {[1, 2, 3].map((index) => (
       <div
         key={index}
-        className="flex items-center bg-white rounded-lg h-14 px-4"
+        className="flex h-14 items-center rounded-lg bg-white px-4"
       >
-        <div className="h-2 bg-gray-300 rounded w-full"></div>
+        <div className="h-2 w-full rounded bg-gray-300"></div>
       </div>
     ))}
   </div>
@@ -52,11 +53,18 @@ export default function Home() {
   }, []);
 
   return (
-    <section className="space-y-6 my-20 py-12 sm:py-20 lg:py-20">
+    <section className="my-20 space-y-6 py-12 sm:py-20 lg:py-20">
       <div className="container flex max-w-5xl flex-col gap-5">
-        <h1 className="text-3xl font-bold">&lt; Insert Your Next Big Idea Here &gt;</h1>
-        <h2 className="text-gray-500 text-xl">You can ask me things like...</h2>
-        <div className="w-full grid grid-cols-1 gap-2">
+        <chakra.h1 className="text-3xl font-bold">
+          &lt; Insert Your Next Big Idea Here &gt;
+        </chakra.h1>
+        <chakra.h2
+          fontSize="xl"
+          className={colorMode === "light" ? "text-gray-600" : "text-gray-500"}
+        >
+          You can ask me things like...
+        </chakra.h2>
+        <div className="grid w-full grid-cols-1 gap-2">
           {loading ? (
             <SkeletonLoader />
           ) : (
@@ -66,8 +74,8 @@ export default function Home() {
                   key={index}
                   className={
                     colorMode === "light"
-                      ? "flex line-clamp-2 items-center border hover:bg-gray-100 hover:text-teal-700 rounded-lg transition-all text-sm h-14 p-3"
-                      : "flex line-clamp-2 items-center border hover:bg-gray-700 hover:text-white rounded-lg transition-all text-sm h-14 p-3"
+                      ? "line-clamp-2 flex h-14 items-center rounded-lg border p-3 text-sm text-gray-600 transition-all hover:bg-gray-100 hover:text-teal-700"
+                      : "line-clamp-2 flex h-14 items-center rounded-lg border p-3 text-sm transition-all hover:bg-gray-700 hover:text-white"
                   }
                 >
                   <div className="line-clamp-2">{entry.question}</div>
