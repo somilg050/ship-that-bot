@@ -93,13 +93,18 @@ const Navbar = ({
             onClose={() => setFullAccessModal(false)}
             onClick={handleSignIn}
           />
+          <ThemeToggleButton />
           {tryCount !== null && user ? (
-            <Button marginRight={4} onClick={() => setFullAccessModal(true)}>
+            <Button
+              colorScheme="teal"
+              variant="outline"
+              marginRight={4}
+              onClick={() => setFullAccessModal(true)}
+            >
               {tryCount} attempts left
             </Button>
           ) : null}
           {children}
-          <ThemeToggleButton />
           <Link
             as={NextLink}
             href={"/about"}
