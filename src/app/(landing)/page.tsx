@@ -56,13 +56,13 @@ export default function Home() {
     <section className="my-20 space-y-6 py-12 sm:py-20 lg:py-20">
       <div className="container flex max-w-5xl flex-col gap-5">
         <chakra.h1 className="text-3xl font-bold">
-          &lt; Insert Your Next Big Idea Here &gt;
+          Want to build an AI chatbot?
         </chakra.h1>
         <chakra.h2
           fontSize="xl"
           className={colorMode === "light" ? "text-gray-600" : "text-gray-500"}
         >
-          You can ask me things like...
+          This is the template you are looking for 🚀
         </chakra.h2>
         <div className="grid w-full grid-cols-1 gap-2">
           {loading ? (
