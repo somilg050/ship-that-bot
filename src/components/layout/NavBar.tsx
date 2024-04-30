@@ -11,7 +11,10 @@ import {
 } from "@/src/components/Modal";
 import Spinner from "@/src/components/Spinner";
 import ThemeToggleButton from "@/src/components/ThemeToggleButton";
-import { getDocFirestore } from "@/src/lib/firebase/firebaseRepository";
+import {
+  getDocFirestore,
+  updateDocFirestore,
+} from "@/src/lib/firebase/firebaseRepository";
 import { Button, Link, useColorMode } from "@chakra-ui/react";
 import { onAuthStateChanged } from "firebase/auth";
 // @ts-ignore
@@ -33,11 +36,26 @@ const Navbar = ({
   const [showModal, setShowModal] = useState(false);
   const [showFullAccessModal, setFullAccessModal] = useState(false);
 
-  const [chatSessionId, setChatSessionId] = useState(null);
-  useEffect(() => {
-    setChatSessionId(uuidv4()); // Generate chatSessionId only on the client side
-  }, []);
-  const chatUrl = `/chat/${chatSessionId}`;
+  const [, setChatSessionId] = useState(null);
+
+  const handleNewSession = async () => {
+    const sessionId = uuidv4();
+    if (user && user.email) {
+      const doc = await getDocFirestore(user.email);
+      if (doc.exists()) {
+        const history = Array.isArray(doc.data()?.history)
+          ? [...doc.data().history, sessionId]
+          : [sessionId];
+
+        await updateDocFirestore({
+          email: user.email,
+          history: history,
+        });
+      }
+    }
+    setChatSessionId(sessionId);
+    window.location.href = `/chat/${sessionId}`;
+  };
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -115,7 +133,7 @@ const Navbar = ({
           </Link>
           {user ? (
             <Link
-              href={chatUrl}
+              onClick={handleNewSession}
               _hover={{ textDecoration: "none" }}
               className="text-back mx-2 pl-2 pr-4 font-medium hover:text-teal-600"
             >

@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Navbar from "@/src/components/layout/NavBar";
-import { SiteFooter } from "@/src/components/layout/Footer";
 
 interface LandingLayoutProps {
   children: React.ReactNode;

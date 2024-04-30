@@ -1,10 +1,14 @@
 "use client";
-import { useParams } from "next/navigation";
-import { useChat } from "ai/react";
+
 import React, { useEffect, useRef, useState } from "react";
+import { useParams, useRouter } from "next/navigation";
+import ChatMessageContainer from "@/src/components/Chat";
 import { FullAccessModal, SignUpModal } from "@/src/components/Modal";
 import { UserAuth } from "@/src/context/AuthContext";
-import { useRouter } from "next/navigation";
+import {
+  getDocFirestore,
+  updateDocFirestore,
+} from "@/src/lib/firebase/firebaseRepository";
 import { Button } from "@chakra-ui/button";
 import { ArrowUpIcon, SmallCloseIcon } from "@chakra-ui/icons";
 import {
@@ -13,11 +17,7 @@ import {
   InputRightElement,
   useColorMode,
 } from "@chakra-ui/react";
-import ChatMessageContainer from "@/src/components/Chat";
-import {
-  getDocFirestore,
-  setDocFirestore,
-} from "@/src/lib/firebase/firebaseRepository";
+import { useChat } from "ai/react";
 
 export default function ChatSession() {
   const { colorMode } = useColorMode();
@@ -73,7 +73,7 @@ export default function ChatSession() {
       const doc = await getDocFirestore(user.email);
       if (doc.exists()) {
         const count = doc.data().count - 1 < 0 ? 0 : doc.data().count - 1;
-        await setDocFirestore({ email: user.email, count: count });
+        await updateDocFirestore({ email: user.email, count: count });
       }
     }
     return true;
@@ -142,7 +142,7 @@ export default function ChatSession() {
   }, [messages]); // Depend on the message array so the effect runs when new messages are added
 
   return (
-    <div className="flex flex-col flex-grow pt-14">
+    <div className="flex flex-grow flex-col pt-14">
       <FullAccessModal
         isOpen={showFullAccessModal}
         onClose={() => setShowFullAccessModal(false)}
@@ -155,7 +155,7 @@ export default function ChatSession() {
       {/* Chat messages container */}
       <ChatMessageContainer messages={messages} bottomRef={bottomRef} />
       {/* Input container */}
-      <div className="fixed bottom-0 left-0 w-full py-10 px-20">
+      <div className="fixed bottom-0 left-0 w-full px-20 py-10">
         <form onSubmit={handleSubmit} className="flex items-center space-x-2">
           <InputGroup>
             <Input
