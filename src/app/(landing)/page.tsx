@@ -86,6 +86,19 @@ export default function Home() {
         </div>
         <MessageSender />
       </div>
+      <script
+        data-name="BMC-Widget"
+        data-cfasync="false"
+        src={"https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"}
+        data-id="somilgupta"
+        data-description="Support me on Buy me a coffee!"
+        data-message=""
+        data-color="#319795"
+        data-position="left"
+        data-x_margin="20"
+        data-y_margin="25"
+        defer
+      />
     </section>
   );
 }

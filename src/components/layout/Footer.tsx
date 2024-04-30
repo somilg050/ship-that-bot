@@ -1,17 +1,20 @@
+"use client";
+
 import * as React from "react";
 import Link from "next/link";
-
-import { siteConfig } from "@/src/config/site";
-import { cn } from "@/src/lib/utils";
-
 import { Icons } from "@/src/components/shared/Icons";
+import { siteConfig } from "@/src/config/site";
+import { useColorMode } from "@chakra-ui/react";
 
-export function SiteFooter({ className }: React.HTMLAttributes<HTMLElement>) {
+export function SiteFooter() {
+  const { colorMode } = useColorMode();
   return (
-    <footer className={cn("border-t", className)}>
-      <div className="py-4">
+    <footer
+      className={colorMode === "light" ? "border-t bg-gray-100" : "border-t"}
+    >
+      <div className="px-20 py-4">
         <div className="container flex items-center justify-between">
-          <p className="text-left text-sm text-muted-foreground">
+          <p className="text-muted-foreground text-left text-sm">
             Made with ❤️ by{" "}
             <Link
               href={siteConfig.links.twitter}
