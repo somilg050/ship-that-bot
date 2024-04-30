@@ -4,8 +4,11 @@
 
 **Next.js boilerplate code to build an AI chatbot in hours, not days.**
 
-<img width="1186" alt="LandingPage" src="https://github.com/somilg050/ship-that-bot/assets/31178867/4fcf7332-e16d-40da-9448-eef62eb3286c">
+![pretty_snap_2024_3_30_18_13](https://github.com/somilg050/ship-that-bot/assets/31178867/f040872e-3bae-454d-81ce-3461a801edc1)
 
+<!---
+<img width="1186" alt="LandingPage" src="https://github.com/somilg050/ship-that-bot/assets/31178867/4fcf7332-e16d-40da-9448-eef62eb3286c">
+-->
 
 ---
 <p align="center">
